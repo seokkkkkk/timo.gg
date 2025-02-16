@@ -1,3 +1,5 @@
+import React from 'react';
+
 function LoginForm() {
   return (
     <div className="mb-[64px] flex flex-col gap-[8px]">
