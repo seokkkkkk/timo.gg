@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ReactComponent as Star } from '../../assets/svgs/star.svg';
+import { Star } from '../../assets/svgs/assets';
 
 interface StarRatingProps {
   defaultRating?: number;

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import defaultProfile from '../../assets/images/default-profile.png';
+import { TimoLogo } from '../../assets/svgs/assets';
 
 interface MenuItemProps {
   to: string;
@@ -41,7 +41,7 @@ function Header() {
   return (
     <header className="w-screen h-[48px] top-0 left-0 bg-[#3C3A3A] text-[#DDDDDD] flex items-center pl-[70px] pr-[70px] justify-between fixed">
       <div className="flex items-center max-w-[586px] w-full justify-between">
-        <Logo />
+        <TimoLogo />
         <Menu />
       </div>
       <div className="flex items-center gap-[8px]">
