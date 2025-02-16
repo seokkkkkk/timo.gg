@@ -46,7 +46,12 @@ function Header() {
       </div>
       <div className="flex items-center gap-[8px]">
         <img src={defaultProfile} alt="user profile" className="rounded-full" />
-        <p>로그인</p>
+        <Link
+          to="/login"
+          className="cursor-pointer hover:text-white transition-colors"
+        >
+          로그인
+        </Link>
       </div>
     </header>
   );
