@@ -1,6 +1,6 @@
 import Header from '../components/common/Header.tsx';
-import LoginForm from '../components/common/login/LoginForm.tsx';
-import SocialLogin from '../components/common/login/SocialLogin.tsx';
+import LoginForm from '../components/login/LoginForm.tsx';
+import SocialLogin from '../components/login/SocialLogin.tsx';
 
 function LoginPage() {
   return (

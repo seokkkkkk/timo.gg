@@ -1,7 +1,7 @@
-import { ReactComponent as Google } from '../../../assets/svgs/google-logo.svg';
-import { ReactComponent as Naver } from '../../../assets/svgs/naver-logo.svg';
-import { ReactComponent as Kakao } from '../../../assets/svgs/kakao-logo.svg';
-import { ReactComponent as Discord } from '../../../assets/svgs/discord-logo.svg';
+import { ReactComponent as Google } from '../../assets/svgs/google-logo.svg';
+import { ReactComponent as Naver } from '../../assets/svgs/naver-logo.svg';
+import { ReactComponent as Kakao } from '../../assets/svgs/kakao-logo.svg';
+import { ReactComponent as Discord } from '../../assets/svgs/discord-logo.svg';
 
 function SocialLogin() {
   return (
