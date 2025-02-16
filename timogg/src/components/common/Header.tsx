@@ -3,7 +3,7 @@ import defaultProfile from '../../assets/images/default-profile.png';
 
 function Header() {
   return (
-    <header className="w-100vw h-[48px] position-fixed top-0 left-0 bg-[#3C3A3A] text-[#DDDDDD] flex items-center pl-[70px] pr-[70px] justify-between">
+    <header className="w-screen h-[48px] top-0 left-0 bg-[#3C3A3A] text-[#DDDDDD] flex items-center pl-[70px] pr-[70px] justify-between fixed">
       <div className="flex items-center gap-[114px]">
         <Logo />
         <div className="flex items-center gap-[23px]">
