@@ -12,7 +12,7 @@ function MenuItem({ to, label }: MenuItemProps) {
     <Link
       to={to}
       replace
-      className="cursor-pointer hover:text-white transition-colors"
+      className="cursor-pointer hover:text-white transition-colors truncate"
     >
       {label}
     </Link>
@@ -40,7 +40,7 @@ function Menu() {
 function Header() {
   return (
     <header className="w-screen h-[48px] top-0 left-0 bg-[#3C3A3A] text-[#DDDDDD] flex items-center pl-[70px] pr-[70px] justify-between fixed">
-      <div className="flex items-center gap-[114px]">
+      <div className="flex items-center max-w-[586px] w-full justify-between">
         <Logo />
         <Menu />
       </div>
@@ -48,7 +48,7 @@ function Header() {
         <img src={defaultProfile} alt="user profile" className="rounded-full" />
         <Link
           to="/login"
-          className="cursor-pointer hover:text-white transition-colors"
+          className="cursor-pointer hover:text-white transition-colors truncate"
         >
           로그인
         </Link>

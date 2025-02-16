@@ -1,10 +1,12 @@
 import Header from '../components/common/Header.tsx';
 import LoginForm from '../components/common/login/LoginForm.tsx';
 import SocialLogin from '../components/common/login/SocialLogin.tsx';
+import UserReview from '../components/ratings/UserReview.tsx';
 
 function LoginPage() {
   return (
     <>
+      <UserReview />
       <Header />
       <div className="w-full h-screen flex justify-center items-center flex-col">
         <div className="text-center mb-[54px]">
