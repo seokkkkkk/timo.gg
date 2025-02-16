@@ -1,11 +1,14 @@
 import React from 'react';
+import Header from '../components/common/Header.tsx';
 
-const LoginPage = () => {
+function LoginPage() {
   return (
-    <div>
+    <>
+      <Header />
       <h1>Login Page</h1>
-    </div>
+      <p>Log in to access the full app.</p>
+    </>
   );
-};
+}
 
 export default LoginPage;
