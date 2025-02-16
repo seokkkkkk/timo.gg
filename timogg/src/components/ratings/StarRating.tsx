@@ -4,14 +4,21 @@ import { ReactComponent as Star } from '../../assets/svgs/star.svg';
 interface StarRatingProps {
   defaultRating?: number;
   onChange?: (rating: number) => void;
+  width?: string;
+  height?: string;
 }
 
-function StarRating({ defaultRating = 0, onChange }: StarRatingProps) {
+function StarRating({
+  defaultRating = 0,
+  onChange = undefined,
+  width,
+  height,
+}: StarRatingProps) {
   const [rating, setRating] = useState<number>(defaultRating);
 
   const handleClick = (value: number) => {
-    setRating(value);
-    if (onChange) onChange(value);
+    if (onChange !== undefined) setRating(value);
+    if (onChange !== undefined) onChange(value);
   };
 
   return (
@@ -21,8 +28,12 @@ function StarRating({ defaultRating = 0, onChange }: StarRatingProps) {
           key={value}
           type="button"
           onClick={() => handleClick(value)}
-          className="cursor-pointer p-0 m-0"
-          aria-label={`Set rating to ${value}`}
+          className={
+            onChange !== undefined
+              ? 'cursor-pointer p-0 m-0'
+              : 'cursor-default p-0 m-0'
+          }
+          aria-label={`rating-${value}`}
         >
           <Star
             className={
@@ -30,6 +41,8 @@ function StarRating({ defaultRating = 0, onChange }: StarRatingProps) {
                 ? 'fill-[#46cfa7] transition-colors duration-200'
                 : 'fill-[#9aa4af] transition-colors duration-200'
             }
+            width={width}
+            height={height}
           />
         </button>
       ))}
@@ -39,7 +52,9 @@ function StarRating({ defaultRating = 0, onChange }: StarRatingProps) {
 
 StarRating.defaultProps = {
   defaultRating: 0,
-  onChange: () => {},
+  onChange: undefined,
+  width: '64px',
+  height: '60.44px',
 };
 
 export default StarRating;

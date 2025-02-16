@@ -1,9 +1,9 @@
 export interface UserInfoProps {
-  nickname: string;
-  tag: string;
-  country: string;
-  rank: string;
-  rankPercentage: string;
+  nickname?: string;
+  tag?: string;
+  country?: string;
+  rank?: string;
+  rankPercentage?: string;
 }
 
 function UserInfo({
@@ -38,5 +38,13 @@ function UserInfo({
     </div>
   );
 }
+
+UserInfo.defaultProps = {
+  nickname: 'Unknown',
+  tag: '0000',
+  country: 'NA',
+  rank: '0',
+  rankPercentage: '0',
+};
 
 export default UserInfo;
