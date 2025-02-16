@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from './LandingPage.tsx';
 import LoginPage from './LoginPage.tsx';
 import RegisterPage from './RegisterPage.tsx';
-import MatchPage from './MatchPage';
-import BoardPage from './BoardPage';
+import MatchPage from './MatchPage.tsx';
+import BoardPage from './BoardPage.tsx';
 
-const Router = () => {
+function Router() {
   return (
     <BrowserRouter>
       <Routes>
@@ -18,6 +18,6 @@ const Router = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;

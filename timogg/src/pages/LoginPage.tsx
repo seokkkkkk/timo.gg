@@ -1,11 +1,23 @@
-import React from 'react';
+import Header from '../components/common/Header.tsx';
+import LoginForm from '../components/common/login/LoginForm.tsx';
+import SocialLogin from '../components/common/login/SocialLogin.tsx';
 
-const LoginPage = () => {
+function LoginPage() {
   return (
-    <div>
-      <h1>Login Page</h1>
-    </div>
+    <>
+      <Header />
+      <div className="w-full h-screen flex justify-center items-center flex-col">
+        <div className="text-center mb-[54px]">
+          <h1 className="text-[36px] mb-[12px] font-medium text-[#DDDDDD]">
+            TIMOGG에 어서오세요
+          </h1>
+          <p className="text-[14px]">가입하고 유저들과 의견을 나누어보세요!</p>
+        </div>
+        <LoginForm />
+        <SocialLogin />
+      </div>
+    </>
   );
-};
+}
 
 export default LoginPage;
