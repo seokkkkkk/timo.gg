@@ -1,7 +1,7 @@
 import Header from '../components/common/Header.tsx';
 import LoginForm from '../components/login/LoginForm.tsx';
 import SocialLogin from '../components/login/SocialLogin.tsx';
-import UserReview from '../components/ratings/UserReview.tsx';
+import UserReview from '../components/ratings/UserReviewModal.tsx';
 
 function LoginPage() {
   return (

@@ -3,6 +3,7 @@ import Modal from '../common/Modal.tsx';
 import ReviewQuestion from './ReviewQuestion.tsx';
 import StarRating from './StarRating.tsx';
 import UserInfo, { UserInfoProps } from './UserInfo.tsx';
+import Button from '../common/Button.tsx';
 
 function UserReview() {
   const [attitude, setAttitude] = useState('');
@@ -67,12 +68,7 @@ function UserReview() {
               소환사의 매너 점수를 남겨주세요
             </p>
             <StarRating defaultRating={rating} onChange={setRating} />
-            <button
-              type="submit"
-              className="w-[131px] h-[56px] bg-[#46cfa7] rounded-[10px] font-bold mt-8"
-            >
-              평점 남기기
-            </button>
+            <Button label="평점 남기기" />
           </div>
         </div>
       </div>
