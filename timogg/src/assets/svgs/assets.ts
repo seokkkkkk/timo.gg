@@ -13,6 +13,8 @@ import { ReactComponent as KakaoLogo } from './kakao-logo.svg';
 import { ReactComponent as NaverLogo } from './naver-logo.svg';
 import { ReactComponent as TimoLogo } from './logo.svg';
 import { ReactComponent as Star } from './star.svg';
+import { ReactComponent as TimoLogoBig } from './logo_big.svg';
+import { ReactComponent as DropdownIcon } from './dropdown.svg';
 
 export {
   MikeIcon,
@@ -30,4 +32,6 @@ export {
   NaverLogo,
   TimoLogo,
   Star,
+  TimoLogoBig,
+  DropdownIcon,
 };

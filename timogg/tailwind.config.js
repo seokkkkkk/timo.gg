@@ -17,10 +17,18 @@ module.exports = {
         'primary-green': '#00FFD0',
       },
       fontSize: {
+        'title-1-24-regular': [
+          '24px',
+          { lineHeight: '36px', fontWeight: '400' },
+        ],
         'title1-24-medium': ['24px', { lineHeight: '28px', fontWeight: '500' }],
         'title2-20-demilight': [
           '20px',
           { lineHeight: '22px', fontWeight: '300' },
+        ],
+        'title2-20-regular': [
+          '20px',
+          { lineHeight: '16px', fontWeight: '400' },
         ],
         'title2-20-medium': ['20px', { lineHeight: '22px', fontWeight: '500' }],
         'title2-20-bold': ['20px', { lineHeight: '22px', fontWeight: '700' }],
