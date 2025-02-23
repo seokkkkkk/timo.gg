@@ -6,7 +6,7 @@ import Timo from '../assets/images/timo.png';
 function LandingPage() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('KR');
-  const options = ['KR', 'JP', 'NA'];
+  const options = ['KR'];
 
   const handleOptionClick = (option: string) => {
     setSelectedCountry(option);
