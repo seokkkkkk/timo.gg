@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import defaultProfile from '../../assets/images/default-profile.png';
-import { TimoLogo } from '../../assets/svgs/assets';
+import { TimoLogo } from '../../assets/svgs/assets.ts';
 
 interface MenuItemProps {
   to: string;
@@ -39,21 +39,28 @@ function Menu() {
 
 function Header() {
   return (
-    <header className="w-screen h-[48px] top-0 left-0 bg-[#3C3A3A] text-[#DDDDDD] flex items-center pl-[70px] pr-[70px] justify-between fixed">
-      <div className="flex items-center max-w-[586px] w-full justify-between">
-        <TimoLogo />
-        <Menu />
-      </div>
-      <div className="flex items-center gap-[8px]">
-        <img src={defaultProfile} alt="user profile" className="rounded-full" />
-        <Link
-          to="/login"
-          className="cursor-pointer hover:text-white transition-colors truncate"
-        >
-          로그인
-        </Link>
-      </div>
-    </header>
+    <>
+      <header className="w-screen h-[48px] top-0 left-0 bg-[#3C3A3A] text-[#DDDDDD] flex items-center pl-[70px] pr-[70px] justify-between fixed z-10">
+        <div className="flex items-center max-w-[586px] w-full justify-between">
+          <TimoLogo />
+          <Menu />
+        </div>
+        <div className="flex items-center gap-[8px]">
+          <img
+            src={defaultProfile}
+            alt="user profile"
+            className="rounded-full"
+          />
+          <Link
+            to="/login"
+            className="cursor-pointer hover:text-white transition-colors truncate"
+          >
+            로그인
+          </Link>
+        </div>
+      </header>
+      <div className="h-[48px]" />
+    </>
   );
 }
 
