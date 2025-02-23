@@ -36,7 +36,6 @@ const MatchSidebar = () => {
   };
   return (
     <>
-      <h1>Match Page</h1>
       <motion.div
         className="w-307 py-20 bg-secondary-realdarkgray rounded-15 overflow-hidden "
         layout
