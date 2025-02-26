@@ -15,6 +15,7 @@ import { ReactComponent as TimoLogo } from './logo.svg';
 import { ReactComponent as Star } from './star.svg';
 import { ReactComponent as TimoLogoBig } from './logo_big.svg';
 import { ReactComponent as DropdownIcon } from './dropdown.svg';
+import { ReactComponent as SearchIcon } from './search.svg';
 
 export {
   MikeIcon,
@@ -34,4 +35,5 @@ export {
   Star,
   TimoLogoBig,
   DropdownIcon,
+  SearchIcon,
 };

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import MatchSidebar from '../components/match/MatchSidebar';
 import MatchingPlayerItem from '../components/match/MatchingPlayerItem';
 import Header from '../components/common/Header';
+import MatchingPlayerHeader from '../components/match/MatchingPlayerHeader';
 let matchingPlayers = Array.from({ length: 20 }, (_, i) => ({
   playerName: `Player${i + 1}`,
   playerTag: `#KR1`,
@@ -30,6 +31,7 @@ const MatchPage = () => {
         <div id="sidebar" className="absolute top-0 left-30 h-full w-307">
           <MatchSidebar />
         </div>
+        <MatchingPlayerHeader />
         <div className="w-874 px-10 bg-secondary-realdarkgray flex flex-col items-center">
           <div
             id="tb-title"
