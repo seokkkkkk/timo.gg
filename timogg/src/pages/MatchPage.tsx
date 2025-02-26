@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import MatchSidebar from '../components/match/MatchSidebar';
-import MatchingPlayerItem from '../components/match/MatchingPlayerItem';
 import Header from '../components/common/Header';
 import MatchingPlayerHeader from '../components/match/MatchingPlayerHeader';
+import MatchingPlayerTableHeader from '../components/match/MatchingPlayerTableHeader';
+import MatchingPlayerTableItem from '../components/match/MatchingPlayerTableItem';
 let matchingPlayers = Array.from({ length: 20 }, (_, i) => ({
   playerName: `Player${i + 1}`,
   playerTag: `#KR1`,
@@ -31,34 +32,13 @@ const MatchPage = () => {
         <div id="sidebar" className="absolute top-0 left-30 h-full w-307">
           <MatchSidebar />
         </div>
+        {/* 매칭중인 플레이어 헤더 */}
         <MatchingPlayerHeader />
         <div className="w-874 px-10 bg-secondary-realdarkgray flex flex-col items-center">
-          <div
-            id="tb-title"
-            className="w-820 flex items-center justify-between px-24 py-16 border-b storke-1 border-[#5C5C5C]"
-          >
-            <div className="flex flex-row gap-24 items-center">
-              <div className="text-body2-15-regular text-primary-white">
-                소환사 닉네임
-              </div>
-              <div className="text-body2-15-regular text-primary-white">
-                티어
-              </div>
-            </div>
-            <div className="flex gap-24">
-              <div className="text-body2-15-regular text-secondary-gray">
-                게임 횟수
-              </div>
-              <div className="text-body2-15-regular text-secondary-gray">
-                승률
-              </div>
-              <div className="text-body2-15-regular text-secondary-gray">
-                최근 플레이
-              </div>
-            </div>
-          </div>
+          {/* 매칭중인 플레이어 테이블 */}
+          <MatchingPlayerTableHeader />
           {matchingPlayers.map((player, i) => (
-            <MatchingPlayerItem key={i} {...player} />
+            <MatchingPlayerTableItem key={i} {...player} />
           ))}
         </div>
       </div>

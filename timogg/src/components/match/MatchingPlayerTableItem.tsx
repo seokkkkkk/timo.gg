@@ -1,4 +1,4 @@
-interface MatchingPlayerItemProps {
+interface MatchingPlayerTableItemProps {
   playerName: string;
   playerTag: string;
   tier: string;
@@ -6,14 +6,14 @@ interface MatchingPlayerItemProps {
   winRate: number;
   lastPlayed: string;
 }
-export default function MatchingPlayerItem({
+export default function MatchingPlayerTableItem({
   playerName,
   playerTag,
   tier,
   gamePlayed,
   winRate,
   lastPlayed,
-}: MatchingPlayerItemProps) {
+}: MatchingPlayerTableItemProps) {
   let lolTier = [
     'Iron',
     'Bronze',
