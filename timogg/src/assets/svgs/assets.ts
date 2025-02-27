@@ -17,6 +17,7 @@ import { ReactComponent as TimoLogoBig } from './logo_big.svg';
 import { ReactComponent as DropdownIcon } from './dropdown.svg';
 import { ReactComponent as SearchIcon } from './search.svg';
 import { ReactComponent as SendIcon } from './send.svg';
+import { ReactComponent as CopyIcon } from './copy.svg';
 
 export {
   MikeIcon,
@@ -38,4 +39,5 @@ export {
   DropdownIcon,
   SearchIcon,
   SendIcon,
+  CopyIcon,
 };
