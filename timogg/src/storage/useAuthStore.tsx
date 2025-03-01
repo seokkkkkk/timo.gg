@@ -1,7 +1,14 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-export type UserData = {};
+export type UserData = {
+  email?: string;
+  id?: number;
+  nickname?: string;
+  playerName?: string;
+  playerTag?: string;
+  username?: string;
+};
 
 type AuthStore = {
   isLoggedIn: boolean;

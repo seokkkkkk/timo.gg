@@ -11,7 +11,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      router('/');
+      router('/', { replace: true });
     }
   }, [isLoggedIn]);
 

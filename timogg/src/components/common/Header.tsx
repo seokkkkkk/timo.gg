@@ -2,9 +2,19 @@ import { Link } from 'react-router-dom';
 import defaultProfile from '../../assets/images/default-profile.png';
 import { TimoLogo } from '../../assets/svgs/assets.ts';
 import useAuthStore from '../../storage/useAuthStore.tsx';
+import { useEffect } from 'react';
 
 function Header() {
-  const { isLoggedIn, accessToken, refreshToken } = useAuthStore();
+  const { isLoggedIn, accessToken, refreshToken, userData } = useAuthStore();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      console.log('로그인 되었습니다.');
+      console.log('accessToken: ', accessToken);
+      console.log('refreshToken: ', refreshToken);
+      console.log('userData: ', userData);
+    }
+  });
 
   return (
     <>

@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { socialLogin } from '../apis/auth';
 import useAuthStore from '../storage/useAuthStore';
+import { myInfo } from '../apis/member';
 
 function AuthCallback() {
   const { provider } = useParams();
   const [searchParams] = useSearchParams();
-  const { login } = useAuthStore();
+  const { login, setUserData } = useAuthStore();
+  const router = useNavigate();
 
   const code = searchParams.get('code');
   const state = searchParams.get('state');
@@ -20,7 +22,11 @@ function AuthCallback() {
 
             login(data!.accessToken, data!.refreshToken);
 
-            window.location.href = '/';
+            const userData = await myInfo();
+
+            setUserData(userData);
+
+            router('/', { replace: true });
           }
           break;
         default:
