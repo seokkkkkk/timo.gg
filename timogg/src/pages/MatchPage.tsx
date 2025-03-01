@@ -4,6 +4,8 @@ import Header from '../components/common/Header';
 import MatchingPlayerHeader from '../components/match/MatchingPlayerHeader';
 import MatchingPlayerTableHeader from '../components/match/MatchingPlayerTableHeader';
 import MatchingPlayerTableItem from '../components/match/MatchingPlayerTableItem';
+
+import Chat from '../components/chat/Chat';
 let matchingPlayers = Array.from({ length: 20 }, (_, i) => ({
   playerName: `Player${i + 1}`,
   playerTag: `#KR1`,
@@ -28,11 +30,14 @@ const MatchPage = () => {
   return (
     <>
       <Header />
+
       <div className="pl-40 relative flex flex-col gap-20 justify-center items-center">
         <div id="sidebar" className="absolute top-0 left-30 h-full w-307">
           <MatchSidebar />
         </div>
         {/* 매칭중인 플레이어 헤더 */}
+        {/* todo: 듀오가 시작됐을때 화면에 표시 */}
+        <Chat />
         <MatchingPlayerHeader />
         <div className="w-874 px-10 bg-secondary-realdarkgray flex flex-col items-center">
           {/* 매칭중인 플레이어 테이블 */}
