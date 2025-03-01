@@ -1,8 +1,21 @@
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/common/Header.tsx';
 import LoginForm from '../components/login/LoginForm.tsx';
 import SocialLogin from '../components/login/SocialLogin.tsx';
+import useAuthStore from '../storage/useAuthStore.tsx';
+import { useEffect } from 'react';
+import Timo from '../assets/images/timo.png';
 
 function LoginPage() {
+  const { isLoggedIn } = useAuthStore();
+  const router = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      router('/', { replace: true });
+    }
+  }, [isLoggedIn]);
+
   return (
     <>
       <Header />
@@ -13,7 +26,7 @@ function LoginPage() {
           </h1>
           <p className="text-[14px]">가입하고 유저들과 의견을 나누어보세요!</p>
         </div>
-        <LoginForm />
+        <img src={Timo} alt="timo" className="w-[210px] h-[264px] mb-[54px]" />
         <SocialLogin />
       </div>
     </>
