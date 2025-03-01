@@ -29,12 +29,14 @@ function Header() {
             alt="user profile"
             className="rounded-full"
           />
-          <Link
-            to="/login"
-            className="cursor-pointer hover:text-white transition-colors truncate"
-          >
-            로그인
-          </Link>
+          {!isLoggedIn && (
+            <Link
+              to="/login"
+              className="cursor-pointer hover:text-white transition-colors truncate"
+            >
+              로그인
+            </Link>
+          )}
         </div>
       </header>
       <div className="h-[48px]" />
