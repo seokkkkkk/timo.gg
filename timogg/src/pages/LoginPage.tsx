@@ -1,8 +1,20 @@
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/common/Header.tsx';
 import LoginForm from '../components/login/LoginForm.tsx';
 import SocialLogin from '../components/login/SocialLogin.tsx';
+import useAuthStore from '../storage/useAuthStore.tsx';
+import { useEffect } from 'react';
 
 function LoginPage() {
+  const { isLoggedIn } = useAuthStore();
+  const router = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      router('/');
+    }
+  }, [isLoggedIn]);
+
   return (
     <>
       <Header />
