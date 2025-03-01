@@ -20,10 +20,6 @@ function SocialLogin() {
         <SocialButton provider="kakao" />
         <SocialButton provider="discord" />
       </div>
-      <div className="text-[13px] text-[#dddddd] flex gap-[8px] justify-center">
-        <p>더 많은 이야기가 궁금하다면?</p>
-        <p className="text-[#00ffd0]">회원가입</p>
-      </div>
     </div>
   );
 }
