@@ -26,7 +26,7 @@ export default function Message({ messages }: MessageProps) {
   }, [messages]);
   return (
     <div
-      className="h-300 overflow-auto rounded flex flex-col gap-4"
+      className="w-full h-300 px-12 overflow-auto rounded flex flex-col gap-4 "
       style={{
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
