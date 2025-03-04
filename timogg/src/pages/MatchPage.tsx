@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MatchSidebar from '../components/match/MatchSidebar';
+import MatchSidebar from '../components/sidebars/match/MatchSidebar';
 import Header from '../components/common/Header';
 import MatchingPlayerHeader from '../components/match/MatchingPlayerHeader';
 import MatchingPlayerTableHeader from '../components/match/MatchingPlayerTableHeader';

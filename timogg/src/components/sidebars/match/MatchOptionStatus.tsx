@@ -9,8 +9,8 @@ import {
   MikeMuteIcon,
   SupportPositionIcon,
   TopPositionIcon,
-} from '../../assets/svgs/assets.ts';
-import useMatchReducer from '../../hooks/useMatchReducer.ts';
+} from '../../../assets/svgs/assets';
+import useMatchReducer from '../../../hooks/useMatchReducer.ts';
 
 export default function MatchOptionStatus({ onClickFindDuoBtn }: any) {
   let [state, dispatch] = useMatchReducer();
