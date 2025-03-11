@@ -12,12 +12,19 @@ import {
 } from '../../../assets/svgs/assets';
 import useMatchReducer from '../../../hooks/useMatchReducer.ts';
 
-export default function MatchOptionStatus({ onClickFindDuoBtn }: any) {
+export default function MatchOptionStatus({
+  onClickMatchingStartBtn,
+  onClickCloseOptionsBtn,
+}: any) {
   let [state, dispatch] = useMatchReducer();
   const onClickBtn = () => {
     localStorage.setItem('matchOption', JSON.stringify(state));
-    onClickFindDuoBtn();
+    onClickMatchingStartBtn();
   };
+  const onClickCloseBtn = () => {
+    onClickCloseOptionsBtn();
+  };
+
   const handleClick = (type: string, value: string) => {
     dispatch({ type, value });
   };
@@ -108,6 +115,12 @@ export default function MatchOptionStatus({ onClickFindDuoBtn }: any) {
         onClick={onClickBtn}
       >
         <div className="text-primary-white text-body1-16-bold">듀오 찾기</div>
+      </button>
+      <button
+        className="w-270 h-42 px-25 py-10 bg-primary-white rounded-10 flex justify-center items-center hover:bg-primary-lightgray"
+        onClick={onClickCloseBtn}
+      >
+        <div className="text-black text-body1-16-bold">닫기</div>
       </button>
     </>
   );
