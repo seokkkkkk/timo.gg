@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import MatchOptionStatus from './MatchOptionStatus';
 import DuoFindStatus from './DuoFindStatus';
-import DuoMatchedStatus from './DuoMatchedStatus';
-import DuoFindStartStatus from './DuoFindStartStatus';
+import DuoFindStartStatus from './InitialStatus';
 import DuoFindingStatus from './DuoFindingStatus';
-
+import DuoEndConfirmStatus from './DuoEndConfirmStatus';
+import DuoEndedStatus from './DuoEndedStatus';
+import InitialStatus from './InitialStatus';
 const MatchSidebar = () => {
   const [step, setStep] = useState(0);
   const [isMatched, setIsMatched] = useState(false);
@@ -16,10 +17,13 @@ const MatchSidebar = () => {
     setStep((prev: number) => 1);
   };
   const onClickFindCancelDuoBtn = () => {
+    setStep((prev: number) => 3);
+  };
+  const onClickCloseOptionsBtn = () => {
     setStep((prev: number) => 0);
   };
 
-  const onClickFindDuoBtn = () => {
+  const onClickMatchingStartBtn = () => {
     setStep((prev: number) => 2);
   };
   const onClickMatchAccept = () => {
@@ -31,13 +35,16 @@ const MatchSidebar = () => {
     setStep((prev: number) => 1);
   };
   const onClickDuoEndBtn = () => {
-    setStep((prev: number) => 0);
+    setStep((prev: number) => 5);
     setIsMatched(false);
+  };
+  const onClickDuoEndConfirmBtn = () => {
+    setStep((prev: number) => 6);
   };
   return (
     <>
       <motion.div
-        className="w-307 py-20 bg-secondary-realdarkgray rounded-15 overflow-hidden "
+        className="w-295 py-20 bg-secondary-realdarkgray rounded-15 overflow-hidden "
         layout
         layoutRoot
         transition={{
@@ -64,7 +71,10 @@ const MatchSidebar = () => {
             }}
             className="w-full flex flex-col gap-24 items-center"
           >
-            <MatchOptionStatus onClickFindDuoBtn={onClickFindDuoBtn} />
+            <MatchOptionStatus
+              onClickMatchingStartBtn={onClickMatchingStartBtn}
+              onClickCloseOptionsBtn={onClickCloseOptionsBtn}
+            />
           </motion.div>
         )}
         {step === 2 && (
@@ -117,10 +127,42 @@ const MatchSidebar = () => {
               }}
               className="w-full flex flex-col items-center"
             >
-              <DuoMatchedStatus onClickDuoEndBtn={onClickDuoEndBtn} />
+              <InitialStatus onClickDuoEndBtn={onClickDuoEndBtn} />
             </motion.div>
           )
         }
+        {step === 5 && (
+          <motion.div
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: 'linear',
+            }}
+            className="w-full flex flex-col items-center"
+          >
+            <DuoEndConfirmStatus
+              onClickDuoEndConfirmBtn={onClickDuoEndConfirmBtn}
+            />
+          </motion.div>
+        )}
+        {step === 6 && (
+          <motion.div
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: 'linear',
+            }}
+            className="w-full flex flex-col items-center"
+          >
+            <DuoEndedStatus />
+          </motion.div>
+        )}
       </motion.div>
     </>
   );
