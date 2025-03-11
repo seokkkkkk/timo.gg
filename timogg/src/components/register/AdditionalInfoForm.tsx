@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import Button from '../common/Button';
 import { Input } from '../common/Input';
 import { checkNickname, checkSummoner, putMyInfo } from '../../apis/member';
-import { check } from 'prettier';
 import { useNavigate } from 'react-router-dom';
 import useAuthStore from '../../storage/useAuthStore';
 
-function RegisterForm() {
+function AdditionalInfoForm() {
   const [playerName, setPlayerName] = useState('');
   const [playerTag, setPlayerTag] = useState('');
   const [nickname, setNickname] = useState('');
@@ -113,4 +112,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default AdditionalInfoForm;

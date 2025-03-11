@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: #202020;
-  background-image: linear-gradient(to bottom, #202020 0%, #292929 100%);
-  background-image: -webkit-linear-gradient(top, #202020 0%, #292929 100%);
-
-  width: 100vw;
-  height: 100vh;
 
   color: #fff;
 }
