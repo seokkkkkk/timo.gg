@@ -5,6 +5,7 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined;
   width?: number;
   height?: number;
+  onSubmit?: () => void;
 }
 
 function Button({
@@ -12,6 +13,7 @@ function Button({
   type = 'button',
   width = 131,
   height = 56,
+  onSubmit,
 }: ButtonProps): JSX.Element {
   return (
     <button
@@ -22,6 +24,7 @@ function Button({
         height: `${height}px`,
       }}
       className="bg-[#46cfa7] rounded-[10px] font-bold mt-8"
+      onClick={onSubmit}
     >
       {label}
     </button>
