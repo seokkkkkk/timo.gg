@@ -6,6 +6,7 @@ import RegisterPage from './RegisterPage.tsx';
 import MatchPage from './MatchPage.tsx';
 import BoardPage from './BoardPage.tsx';
 import AuthCallback from '../utils/authCallback.tsx';
+import ApiTestPage from './ApiTestPage.tsx';
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
         <Route path="/match" element={<MatchPage />} />
         <Route path="/board" element={<BoardPage />} />
         <Route path="/auth/callback/:provider" element={<AuthCallback />} />
+        <Route path="/api" element={<ApiTestPage />} />
       </Routes>
     </BrowserRouter>
   );
