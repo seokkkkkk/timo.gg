@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import MatchOptionStatus from './MatchOptionStatus';
 import DuoFindStatus from './DuoFindStatus';
-import DuoFindStartStatus from './InitialStatus';
 import DuoFindingStatus from './DuoFindingStatus';
 import DuoEndConfirmStatus from './DuoEndConfirmStatus';
 import DuoEndedStatus from './DuoEndedStatus';
 import InitialStatus from './InitialStatus';
+import DuoPlayingStatus from './DuoPlayingStatus';
 const MatchSidebar = () => {
   const [step, setStep] = useState(0);
   const [isMatched, setIsMatched] = useState(false);
@@ -54,9 +54,7 @@ const MatchSidebar = () => {
       >
         {step === 0 && (
           <motion.div layout className="w-full flex flex-col items-center">
-            <DuoFindStartStatus
-              onClickDuoFindStartBtn={onClickDuoFindStartBtn}
-            />
+            <InitialStatus onClickDuoFindStartBtn={onClickDuoFindStartBtn} />
           </motion.div>
         )}
         {step === 1 && (
@@ -127,7 +125,7 @@ const MatchSidebar = () => {
               }}
               className="w-full flex flex-col items-center"
             >
-              <InitialStatus onClickDuoEndBtn={onClickDuoEndBtn} />
+              <DuoPlayingStatus onClickDuoEndBtn={onClickDuoEndBtn} />
             </motion.div>
           )
         }
