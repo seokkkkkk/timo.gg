@@ -1,14 +1,21 @@
 import { axiosInstance } from '.';
 
 // 평점 매기기
+interface CreateRatingApiBody {
+  score: number;
+  attitude: string;
+  speech: string;
+  skill: string;
+  duoId: number;
+}
 export async function createRatingApi({
   ratingId,
-  rating,
+  body,
 }: {
   ratingId: string;
-  rating: any;
+  body: CreateRatingApiBody;
 }) {
-  const response = await axiosInstance.post('/ratings/' + ratingId, rating);
+  const response = await axiosInstance.post('/ratings/' + ratingId, body);
   return response.data;
 }
 

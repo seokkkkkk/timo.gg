@@ -1,14 +1,14 @@
 import { axiosInstance } from '.';
 
 // 매칭 옵션 받아오기
-export async function getMatchingOptionsApi() {
-  const response = await axiosInstance.get('/match/option');
+export async function getMatchingOptionsApi(matchId: number) {
+  const response = await axiosInstance.get('/matching-options/' + matchId);
   return response.data;
 }
 
 // 매칭 옵션 생성
 export async function createMatchingOptionApi(data: any) {
-  const response = await axiosInstance.post('/match/option/', data);
+  const response = await axiosInstance.post('/matching-options/', data);
   return response.data;
 }
 

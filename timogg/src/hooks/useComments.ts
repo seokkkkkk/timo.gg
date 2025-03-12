@@ -2,6 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import {
   createCommentApi,
   deleteCommentApi,
+  getCommentApi,
   getCommentsApi,
   updateCommentApi,
 } from '../apis/comment';
@@ -37,7 +38,17 @@ export default function useComments() {
       console.log('댓글 삭제 실패', error);
     },
   });
-  // 댓글 조회
+  // 단일 댓글 조회
+  let getComment = useMutation({
+    mutationFn: getCommentApi,
+    onSuccess: data => {
+      console.log('댓글 조회 성공', data);
+    },
+    onError: error => {
+      console.log('댓글 조회 실패', error);
+    },
+  });
+  // 댓글 전체 조회
   let getComments = useMutation({
     mutationFn: getCommentsApi,
     onSuccess: data => {
@@ -47,5 +58,11 @@ export default function useComments() {
       console.log('댓글 조회 실패', error);
     },
   });
-  return { createComment, updateComment, deleteComment, getComments };
+  return {
+    createComment,
+    updateComment,
+    deleteComment,
+    getComment,
+    getComments,
+  };
 }

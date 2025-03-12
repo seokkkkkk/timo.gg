@@ -1,20 +1,30 @@
 import { axiosInstance } from '.';
 
+interface CreateCommentApiBody {
+  content: string;
+  memberId: number;
+  postId: number;
+}
 // 댓글 작성
-export async function createCommentApi(data: any) {
-  const response = await axiosInstance.post('/comments', data);
+export async function createCommentApi(body: CreateCommentApiBody) {
+  const response = await axiosInstance.post('/comments', body);
   return response.data;
 }
 
+interface UpdateCommentApiBody {
+  content: string;
+  memberId: number;
+  postId: number;
+}
 // 댓글 수정
 export async function updateCommentApi({
   commentId,
-  data,
+  body,
 }: {
   commentId: string;
-  data: any;
+  data: UpdateCommentApiBody;
 }) {
-  const response = await axiosInstance.put('/comments/' + commentId, data);
+  const response = await axiosInstance.put('/comments/' + commentId, body);
   return response.data;
 }
 
@@ -24,8 +34,14 @@ export async function deleteCommentApi(commentId: string) {
   return response.data;
 }
 
-// 댓글 조회
-export async function getCommentsApi(data: any) {
-  const response = await axiosInstance.get('/comments/' + data);
+// 단일 댓글 조회
+export async function getCommentApi(commentId: string) {
+  const response = await axiosInstance.get('/comments/public/' + commentId);
+  return response.data;
+}
+
+// 댓글 전체 조회
+export async function getCommentsApi() {
+  const response = await axiosInstance.get('/comments/public');
   return response.data;
 }

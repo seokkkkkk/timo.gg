@@ -1,9 +1,22 @@
 import { axiosInstance } from '.';
 
 // 포스트 작성
-export async function createPostApi(data: any) {
-  const response = await axiosInstance.post('/posts', data);
+interface CreatePostApiBody {
+  title: string;
+  content: string;
+  category: string;
+  membetId: number;
+}
+export async function createPostApi(body: CreatePostApiBody) {
+  const response = await axiosInstance.post('/posts', body);
   return response.data;
+}
+
+interface UpdatePostApiBody {
+  title: string;
+  content: string;
+  category: string;
+  membetId: number;
 }
 
 // 포스트 수정
@@ -12,7 +25,7 @@ export async function updatePostApi({
   data,
 }: {
   postId: string;
-  data: any;
+  data: UpdatePostApiBody;
 }) {
   const response = await axiosInstance.put('/posts/' + postId, data);
   return response.data;
