@@ -4,6 +4,7 @@ interface DuoPlayingStatusProps {
   onClickOpenChatBtn: () => void;
   onClickDuoEndBtn: () => void;
 }
+
 export default function DuoPlayingStatus({
   duoName,
   duoTag,

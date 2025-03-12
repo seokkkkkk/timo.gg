@@ -7,6 +7,8 @@ import DuoEndConfirmStatus from './DuoEndConfirmStatus';
 import DuoEndedStatus from './DuoEndedStatus';
 import InitialStatus from './InitialStatus';
 import DuoPlayingStatus from './DuoPlayingStatus';
+import io from 'socket.io-client';
+
 const MatchSidebar = () => {
   const [step, setStep] = useState(0);
   const [isMatched, setIsMatched] = useState(false);
