@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MikeIcon, SupportPositionIcon } from '../../assets/svgs/assets';
+import { MikeIcon, SupportPositionIcon } from '../../../assets/svgs/assets';
 
 interface MatchInfo {
   id: number;
