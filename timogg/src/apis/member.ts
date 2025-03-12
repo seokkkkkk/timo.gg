@@ -43,7 +43,7 @@ export const checkNickname = async (nickname: string) => {
 
 export const putMyInfo = async (
   nickname: string,
-  palyerName: string,
+  playerName: string,
   playerTag: string,
 ) => {
   try {
@@ -51,7 +51,7 @@ export const putMyInfo = async (
       '/members/me/info',
       {
         nickname,
-        palyerName,
+        playerName,
         playerTag,
       },
       {
