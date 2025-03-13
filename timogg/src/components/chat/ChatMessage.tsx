@@ -14,7 +14,7 @@ export default function Message({ messages }: MessageProps) {
   const myTaileStyle =
     'solid h-0 w-0 border-8 border-t-8 border-r-transparent border-b-transparent border-secondary-green';
   const duoTailStyle =
-    'relative h-0 w-0 border-8 border-t-8 border-l-transparent border-b-transparent border-secondary-gray';
+    'h-0 w-0 border-8 border-t-8 border-l-transparent border-b-transparent border-secondary-gray';
   const myMessageStyle =
     'bg-secondary-green text-sm text-white rounded-s-10 rounded-br-10';
   const duoMessageStyle =

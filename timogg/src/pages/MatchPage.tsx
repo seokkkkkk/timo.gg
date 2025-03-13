@@ -33,7 +33,7 @@ const MatchPage = () => {
     <>
       <Header />
 
-      <div className="pl-40 relative flex flex-col gap-20 justify-center items-center">
+      <div className="pl-40 flex flex-col gap-20 justify-center items-center">
         {/* 매칭중인 플레이어 헤더 */}
         {/* todo: 듀오가 시작됐을때 화면에 표시 */}
         <Chat />
