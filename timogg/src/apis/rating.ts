@@ -7,15 +7,10 @@ interface CreateRatingApiBody {
   speech: string;
   skill: string;
   duoId: number;
+  matchId: number;
 }
-export async function createRatingApi({
-  ratingId,
-  body,
-}: {
-  ratingId: string;
-  body: CreateRatingApiBody;
-}) {
-  const response = await axiosInstance.post('/ratings/' + ratingId, body);
+export async function createRatingApi(body: CreateRatingApiBody) {
+  const response = await axiosInstance.post('/ratings', body);
   return response.data;
 }
 
