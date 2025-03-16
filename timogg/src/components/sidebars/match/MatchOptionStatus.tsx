@@ -188,7 +188,7 @@ const IconBox = ({ label, iconType, type, onClick, state }: IconBoxProps) => {
     <BottomPositionIcon />,
     <SupportPositionIcon />,
   ];
-  let position = ['TOP', 'JUNGLE', 'MID', 'RANGED_DEALER', 'SUPPORT'];
+  let position = ['ANY', 'TOP', 'JUNGLE', 'MID', 'RANGED_DEALER', 'SUPPORT'];
   let mic = ['ENABLED', 'DISABLED'];
   let micIcon = [<MikeIcon />, <MikeMuteIcon />];
   return (
