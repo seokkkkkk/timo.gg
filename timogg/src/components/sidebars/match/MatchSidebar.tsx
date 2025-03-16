@@ -220,7 +220,11 @@ const MatchSidebar = ({
               }}
               className="w-full flex flex-col items-center"
             >
-              <DuoPlayingStatus onClickDuoEndBtn={onClickDuoEndBtn} />
+              <DuoPlayingStatus
+                duoName={duoInfo?.playerName!}
+                duoTag={duoInfo?.playerTag!}
+                onClickDuoEndBtn={onClickDuoEndBtn}
+              />
             </motion.div>
           )
         }
