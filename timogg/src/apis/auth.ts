@@ -6,6 +6,9 @@ export const socialLoginCallback = async (provider: string) => {
     case 'naver':
       window.location.href = `http://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${process.env.REACT_APP_NAVER_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_NAVER_REDIRECT_URI}&state=${process.env.REACT_APP_NAVER_STATE}`;
       break;
+    case 'kakao':
+      window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_KAKAO_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_RECIRECT_URI}&response_type=code`;
+      break;
     default:
       break;
   }
@@ -14,7 +17,7 @@ export const socialLoginCallback = async (provider: string) => {
 export const socialLogin = async (
   provider: string,
   authorizationCode: string,
-  state: string,
+  state?: string,
 ) => {
   switch (provider) {
     case 'naver':
@@ -29,6 +32,18 @@ export const socialLogin = async (
         window.location.href = '/';
         throw error;
       }
+    case 'kakao':
+      try {
+        const response = await axiosInstance.post('/auth/kakao', {
+          authorizationCode,
+        });
+        return response.data;
+      } catch (error) {
+        alert('로그인에 실패했습니다.');
+        window.location.href = '/';
+        throw error;
+      }
+      break;
     default:
       return { accessToken: '', refreshToken: '' };
   }
