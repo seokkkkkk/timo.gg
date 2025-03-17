@@ -50,3 +50,29 @@ export async function getMyInfo() {
   console.log('내 정보 조회 성공', response.data);
   return response.data;
 }
+
+// 리프레시 토큰 만료 시 토큰 재발급
+export async function refreshToken() {
+  const response = await axiosInstance.post('/auth/refresh');
+  axiosInstance.defaults.headers.common['Authorization'] =
+    `Bearer ${response.data.accessToken}`;
+  useAuthStore.setState({
+    accessToken: response.data.accessToken,
+    refreshToken: response.data.refreshToken,
+  });
+  console.log('토큰 재발급 성공', response.data);
+}
+
+//axios interceptors를 사용하여 토큰 만료 시 토큰 재발급
+axiosInstance.interceptors.response.use(
+  response => response,
+  async error => {
+    const originalRequest = error.config;
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      await refreshToken();
+      return axiosInstance(originalRequest);
+    }
+    return Promise.reject(error);
+  },
+);
