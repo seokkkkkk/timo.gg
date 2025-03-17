@@ -12,7 +12,7 @@ function UserReview(userInfo: UserInfoProps) {
   const [skill, setSkill] = useState('');
   const [rating, setRating] = useState(0);
   const { createRating } = useRatings();
-  useEffect(() => {}, [attitude, speech, skill, rating]);
+  // useEffect(() => {}, [attitude, speech, skill, rating]);
   const onClickRating = () =>
     createRating.mutate({
       score: rating,

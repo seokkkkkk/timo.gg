@@ -21,7 +21,13 @@ export async function deleteRatingApi(ratingId: string) {
 }
 
 // 내 평점 조회
-export async function getRatingApi() {
+export async function getMyRatingApi() {
   const response = await axiosInstance.get('/ratings');
+  return response.data;
+}
+
+// 같이 플에이한 듀오 조회
+export async function getDuosListApi() {
+  const response = await axiosInstance.get('/ratings/duos');
   return response.data;
 }

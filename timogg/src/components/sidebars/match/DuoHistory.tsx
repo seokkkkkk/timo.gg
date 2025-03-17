@@ -3,15 +3,18 @@ import { SearchIcon } from '../../../assets/svgs/assets';
 import UserReview from '../../ratings/UserReviewModal';
 import useRatings from '../../../hooks/useRatings';
 
-export default function DuoHistory({
-  duoList = [{ name: ' 이름', tag: '태그', profile: '프로필' }],
-}: any) {
+export default function DuoHistory() {
   let selectedUserInfo;
   const onClickRating = (name: string, tag: string, profile: string) => {
     setModalOpen(true);
     selectedUserInfo = { nickname: name, tag, profile };
   };
   let [modalOpen, setModalOpen] = useState(false);
+  let { getDuosList } = useRatings();
+  const { data: duoList, isLoading, error } = getDuosList();
+  useEffect(() => {
+    duoList.concat({ name: ' 이름', tag: '태그', profile: '프로필' });
+  }, []);
   return (
     <>
       {/* 듀오 검색 */}
@@ -27,7 +30,7 @@ export default function DuoHistory({
       </div>
       {/* 듀오 히스토리 리스트 */}
       <div className="w-full flex gap-16 items-center justify-between">
-        {duoList.map((duo: any) => (
+        {duoList?.map((duo: any) => (
           <>
             <div className="flex gap-16 items-center justify-between">
               {/* 프로필 */}
